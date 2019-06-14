@@ -1,0 +1,47 @@
+.c-form {
+  margin-top: 3rem;
+  width: 500px;
+}
+
+.el-dialog {
+  width: 500px!important;
+  .c-form {
+    width: 400px;
+    margin: 0 auto;
+  }
+  .el-cascader {
+    width: 100%;
+  }
+  .el-input {
+    width: 100%;
+  }
+  .el-select {
+    width: 100%;
+  }
+  .el-date-editor {
+    .el-input {
+      width: 100%;
+    }
+  }
+}
+
+.el-input-group__append {
+  background-color: $color-primary !important;
+  border-color: $color-primary !important;
+}
+
+/* el-table */
+//表头颜色
+.el-table thead {
+  background-color: #ccc;
+}
+.el-table tr {
+  background-color: transparent;
+}
+.el-table th {
+  background-color: transparent;
+}
+//高度
+.el-table th > .cell {
+  line-height: 40px;
+}
