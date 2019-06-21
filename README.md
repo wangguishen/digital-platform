@@ -1,34 +1,50 @@
 # digital-platform
 
-## Project setup
+## 安装依赖包
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 运行项目 区别不同环境 不同路径配置
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+```
+npm run serve:online38
+```
+
+```
+npm run serve:online:76
+```
+
+### 打包项目 区别不同环境 不同打包路径配置
 ```
 npm run build
 ```
 
-### Run your tests
+```
+npm run build:prod
+```
+
+```
+npm run build:staging
+```
+
+### 运行测试
 ```
 npm run test
 ```
 
-### Lints and fixes files
+### 使用eslint进行修补代码
 ```
 npm run lint
 ```
 
-### Run your unit tests
+### 运行单元测试
 ```
 npm run test:unit
 ```
 
-### Customize configuration
+### 自定义配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
