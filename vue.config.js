@@ -133,5 +133,14 @@ module.exports = {
           config.optimization.runtimeChunk('single')
         }
       )
+  },
+  css: {
+    // make scss variable can use in global for vue component
+    loaderOptions: {
+      sass: {
+        // @是src的别名
+        data: `@import "@/style/base/_color.scss";`
+      }
+    }
   }
 }

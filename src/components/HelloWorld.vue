@@ -28,14 +28,27 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <div @click="ceshi">
+      测试打包接口路径
+    </div>
   </div>
 </template>
 
 <script>
+import { login } from '@/api/api'
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    async ceshi () {
+      const param = {
+        a: '0',
+        b: '1'
+      }
+      const res = await login(param)
+    }
   }
 }
 </script>

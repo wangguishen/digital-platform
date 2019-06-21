@@ -1,6 +1,8 @@
 import axios from 'axios'
-import { Message } from 'element-ui';
+// import { Message } from 'element-ui';
 // import store from '@/store/index.js'
+
+// 创建axios实例
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
   timeout: 5000,
@@ -9,14 +11,18 @@ const service = axios.create({
   }
 })
 
-// request interceptor
+// request拦截器
 service.interceptors.request.use(function (config) {
+  // 请求是否有token  权限控制
+  // if (store.getters.token) {
+  //   config.headers['X-Token'] = getToken() // 让每个请求携带token--['X-Token']为自定义key 请根据实际情况自行修改
+  // }
   return config;
 }, function (error) {
   return Promise.reject(error);
 })
 
-// response interceptor
+// respone拦截器
 service.interceptors.response.use(function (response) {
   // console.log(response,'res');
   if (response.data.state !== 200) {

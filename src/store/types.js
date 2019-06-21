@@ -1,5 +1,9 @@
 // mutation const set
 
-// 当前打开的TAG标签
-export const SET_TAG = "SET_TAG"
-export const GET_TAG = "GET_TAG"
+// 表格列宽度
+export const SET_COLUMN_WIDTH = "SET_COLUMN_WIDTH"
+export const GET_COLUMN_WIDTH = "GET_COLUMN_WIDTH"
+
+// table高度
+export const SET_TABLE_HEIGHT = "SET_TABLE_HEIGHT"
+export const GET_TABLE_HEIGHT = "GET_TABLE_HEIGHT"

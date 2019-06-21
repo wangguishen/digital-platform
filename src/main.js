@@ -3,11 +3,13 @@ import App from './App.vue'
 import router from './router/router.js'
 import store from './store/index.js'
 import './permisson.js'
+// import ElementUI from 'element-ui';
 import vFilters from './filters/vFilters.js'
-for (let key in vFilters) {
-	Vue.filter(key, vFilters[key])
+for (const key in vFilters) {
+  Vue.filter(key, vFilters[key])
 }
 
+// Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 new Vue({
