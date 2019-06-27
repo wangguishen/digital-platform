@@ -1,146 +1,90 @@
 <template>
-  <div>
-    1231231
-    <transition name="fade" mode="out-in">
+  <div class="layout">
+    <Layout :style="{minHeight: '100vh'}">
+      <Sider ref="sidebar" hide-trigger collapsible :collapsed-width="78" v-model="isSiderBar">
+        <my-sider-bar></my-sider-bar>
+      </Sider>
+      <Layout>
+        <my-header v-on:changeSide="changeSideBar"></my-header>
+        <Content :style="{padding: '0 16px 16px'}">
+          <Breadcrumb :style="{margin: '16px 0'}">
+            <BreadcrumbItem>Home</BreadcrumbItem>
+            <BreadcrumbItem>Components</BreadcrumbItem>
+            <BreadcrumbItem>Layout</BreadcrumbItem>
+          </Breadcrumb>
+          <Card>
+            <div style="height: 600px">
+              <transition name="fade" mode="out-in">
+                <keep-alive>
+                  <router-view/>
+                </keep-alive>
+              </transition>
+            </div>
+          </Card>
+        </Content>
+      </Layout>
+    </Layout>
+    <!-- <transition name="fade" mode="out-in">
       <keep-alive>
         <router-view/>
       </keep-alive>
-    </transition>
+    </transition> -->
   </div>
 </template>
 
 <script>
+import { list_mixins } from '@/mixins'
+import mySiderBar from '@/components/mysiderbar'
+import myHeader from '@/components/myheader'
 export default {
-  components: {  },
+  name: 'home',
+  components: {
+    mySiderBar, myHeader
+  },
 
+  mixins:[ list_mixins ],
   data () {
     return {
-      
+      isCollapsed: false
     };
   },
 
   computed: {
+    menuitemClasses: function () {
+      return [
+        'menu-item',
+        this.isCollapsed ? 'collapsed-menu' : ''
+      ]
+    },
+  },
+
+  watch: {
     
   },
 
   methods: {
-    
+    changeSideBar () { //点击显示隐藏左侧栏回调事件
+      this.$refs.sidebar.toggleCollapse();
+      // this.$store.dispatch('setSiderBar', !this.isSiderBar)
+    }
   }
 };
-</script>y
+</script>
 
 <style lang="scss">
-$color-primary: #20a0ff;
 
-.container {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  width: 100%;
-
-  .header {
-    height: 60px;
-    line-height: 60px;
-    background: $color-primary;
-    color: #fff;
-    .userinfo {
-      text-align: right;
-      padding-right: 35px;
-      float: right;
-      .userinfo-inner {
-        cursor: pointer;
-        color: #fff;
-        img {
-          width: 40px;
-          height: 40px;
-          border-radius: 20px;
-          margin: 10px 0px 10px 10px;
-          float: right;
-        }
-      }
-    }
-    .logo {
-      //width:230px;
-      height: 60px;
-      font-size: 22px;
-      padding-left: 20px;
-      padding-right: 20px;
-      border-color: rgba(238, 241, 146, 0.3);
-      border-right-width: 1px;
-      border-right-style: solid;
-      transition: 0.5s all;
-      img {
-        width: 40px;
-        float: left;
-        margin: 10px 10px 10px 18px;
-      }
-      .txt {
-        color: #fff;
-      }
-      &.logo-width {
-        width: 230px;
-      }
-      &.logo-collapse-width {
-        width: 60px;
-      }
-    }
-    .tools {
-      padding: 0px 23px;
-      width: 14px;
-      height: 60px;
-      line-height: 60px;
-      cursor: pointer;
-      i {
-        font-size: 18px;
-      }
-    }
+  .layout-con{
+    height: 100%;
+    width: 100%;
   }
-  .main {
-    display: flex; // background: #324057;
-    position: absolute;
-    top: 60px;
-    bottom: 0px;
-    overflow: hidden;
-    .menu {
-      flex: 0 0 60px;
-      width: 60px;
-      &:not(.el-menu--collapse) {
-        flex: 0 0 230px;
-        width: 230px;
-      }
-    }
-    .content-container {
-      flex: 1;
-      // overflow-y: scroll;
-      // padding: 20px;
-      padding: 12px;
-      .breadcrumb-container {
-        //margin-bottom: 15px;
-        height: 32px;
-        .title {
-          width: 200px;
-          float: left;
-          color: #475669;
-        }
-        .breadcrumb-inner {
-          float: right;
-        }
-      }
-      .content-wrapper {
-        background-color: #fff;
-        box-sizing: border-box;
-      }
-    }
+  .collapsed-menu span{
+    width: 0px;
+    transition: width .2s ease;
   }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s;
-}
-
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
+  .collapsed-menu i{
+    transform: translateX(5px);
+    transition: font-size .2s ease .2s, transform .2s ease .2s;
+    vertical-align: middle;
+    font-size: 22px;
+  }
 </style>

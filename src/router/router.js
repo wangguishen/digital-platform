@@ -5,12 +5,12 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/views/login/index.vue')
+    component: r => require(['@/views/login/index.vue'], r)
   },
   {
     path: '/',
     name: 'home',
-    component: () => import('@/views/home/index.vue'),
+    component: r => require(['@/views/home/index.vue'], r),
     children: [
       {
         path: '/',

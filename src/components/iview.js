@@ -3,7 +3,12 @@ import {
   Header,
   Content,
   Footer,
-  Sider
+  Sider,
+  MenuGroup, Menu, MenuItem,
+  Icon,
+  Breadcrumb, BreadcrumbItem,
+  Card,
+  Submenu
 } from 'iview'
 
 const components = [
@@ -11,7 +16,12 @@ const components = [
   Header,
   Content,
   Footer,
-  Sider
+  Sider,
+  MenuGroup, Menu, MenuItem,
+  Icon,
+  Breadcrumb, BreadcrumbItem,
+  Card,
+  Submenu
 ];
 
 // 导出组件

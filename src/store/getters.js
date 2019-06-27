@@ -1,5 +1,5 @@
 const getters = {
-  sidebar: state => state.app.sidebar,
+  sidebar: state => state.interaction.siderBar,
   size: state => state.app.size,
   device: state => state.app.device,
   visitedViews: state => state.tagsView.visitedViews,
