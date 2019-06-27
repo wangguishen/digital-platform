@@ -11,11 +11,17 @@ const routes = [
     path: '/',
     name: 'home',
     component: () => import('@/views/home/index.vue'),
-    children: [{
-      path: '/',
-      name: 'about',
-      component: r => require(['@/views/About.vue'], r)
-    }]
+    children: [
+      {
+        path: '/',
+        name: 'about',
+        component: r => require(['@/views/About.vue'], r)
+      }, {
+        path: '/notebook',
+        name: 'notebook',
+        component: r => require(['@/views/notebook/index.vue'], r)
+      }
+    ]
   }
 ]
 

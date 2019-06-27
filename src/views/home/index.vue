@@ -1,9 +1,12 @@
 <template>
-  <transition name="fade" mode="out-in">
-    <keep-alive>
-      <router-view/>
-    </keep-alive>
-  </transition>
+  <div>
+    1231231
+    <transition name="fade" mode="out-in">
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
+    </transition>
+  </div>
 </template>
 
 <script>
