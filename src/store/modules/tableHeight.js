@@ -1,35 +1,48 @@
 // 表格列表宽度配置
 import * as types from '../types.js'
-import { setLocalStorage, getLocalStorage } from '@/utils/storageUtil.js'
 const clientHeight = document.documentElement.clientHeight
-// const tableHeightPage = clientHeight - 290 + 30
-const tableHeight = clientHeight - 202 + 30
+const tableHeightPage = clientHeight - 102 - 50 - 70
+const tableHeight = clientHeight - 102 - 50
+const slidebarHeight = clientHeight - 60
+const iframeHeight = clientHeight - 102
+
 const state = {
-  tableHeight: tableHeight
+  tableHeight: tableHeight,
+  tableHeightPage: tableHeightPage,
+  slidebarHeight: slidebarHeight,
+  iframeHeight: iframeHeight
+}
+
+const actions = {
+  setTableHeight ({ commit }, boo) {
+    commit(types.SET_TABLE_HEIGHT, boo)
+  },
+  setTableHeightPage ({ commit }, boo) {
+    commit(types.SET_TABLE_HEIGHT_PAGE, boo)
+  },
+  setSlidebarHeight ({ commit }, boo) {
+    commit(types.SET_SLIDEBAR_HEIGHT, boo)
+  },
+  setIframeHeight ({ commit }, boo) {
+    commit(types.SET_IFRAME_HEIGHT, boo)
+  }
 }
 
 const mutations = {
-  [types.SET_TABLE_HEIGHT] (state, data) {
-    setLocalStorage('tableHeight', data);
+  'SET_TABLE_HEIGHT' (state, boo) {
+    state.tableHeight = boo
   },
-  [types.GET_TABLE_HEIGHT] (state, data) {
-    const currentObj = getLocalStorage(data.key, 'json');
-    if (currentObj) {
-      state[data.key] = currentObj;
-    }
+  'SET_TABLE_HEIGHT_PAGE' (state, boo) {
+    state.tableHeightPage = boo
+  },
+  'SET_SLIDEBAR_HEIGHT' (state, boo) {
+    state.slidebarHeight = boo
+  },
+  'SET_IFRAME_HEIGHT' (state, boo) {
+    state.iframeHeight = boo
   }
 }
-const actions = {
-  setTableHeight ({ commit }, state) {
-    commit('SET_TABLE_HEIGHT', state)
-  },
-  setTableHeight1 ({ commit, state }) {
-    return new Promise(resolve => {
-      commit('SET_TABLE_HEIGHT')
-      resolve([...state.tableHeight])
-    })
-  }
-}
+
 export default {
   state,
   mutations,

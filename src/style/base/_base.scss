@@ -3,7 +3,9 @@ body {
   color: $c00;
   font-weight: 400;
   line-height: 1.5;
+  font-family: $font-family-base;
   font-size: 16px;
+  background-color: #F0F4FB;
 }
 
 .block {
@@ -111,10 +113,6 @@ chrome scrollbar::-webkit-scrollbar {
 
 .w_100 {
   width: 100%;
-}
-
-.h_client {
-  height: calc(100vh - 202px);
 }
 
 .h_100 {

@@ -1,16 +1,17 @@
 // base
-// @import "base/variables";
+@import "base/variables";
 @import "base/color";
 @import "base/base";
 // @import "base/mixin";
-// @import "base/reset";
+@import "base/reset";
 //@import "base/font";
-// @import "base/normalize";
+@import "base/normalize";
+@import "base/transition";
 
 // style
-// @import "base/font";
-// @import "base/element-variables";
-// @import "scss/common";
+@import "base/font";
+@import "base/element-variables";
+@import "scss/common";
 // @import "scss/login";
 // @import "scss/edit";
 // @import "scss/table";

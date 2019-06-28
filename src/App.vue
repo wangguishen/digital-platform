@@ -3,24 +3,18 @@
     <router-view />
   </div>
 </template>
-
 <style lang="scss">
-@import './style/style.scss';
-@import './style/scss/common.scss';
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+  #app {
+    height: 100%;
+  }
+  @import "./style/style";
+  .toolbar {
+    background: #fff;
+    height: 30px;
+    padding: 5px 5px 5px 0;
+    margin-bottom: 10px;
+    .el-form-item {
+      margin-bottom: 10px;
     }
   }
-}
 </style>

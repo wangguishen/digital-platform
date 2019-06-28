@@ -1,6 +1,9 @@
+import { setSesStorage } from '@/utils/storageUtil.js'
+
 const state = {
   visitedViews: [],
-  cachedViews: []
+  cachedViews: [],
+  currentTitle: ''
 }
 
 const mutations = {
@@ -68,6 +71,11 @@ const mutations = {
         break
       }
     }
+  },
+
+  SET_CURRENT_TITLE: (state, view) => {
+    setSesStorage("CURRENT_TITLE", view)
+    state.currentTitle = view
   }
 }
 
@@ -154,6 +162,10 @@ const actions = {
 
   updateVisitedView ({ commit }, view) {
     commit('UPDATE_VISITED_VIEW', view)
+  },
+
+  setCurrentTitle ({ commit }, boo) {
+    commit('SET_CURRENT_TITLE', boo)
   }
 }
 

@@ -21,9 +21,11 @@ $cf60:#FF8225;
 $c2a:#2a3542;
 $c35:#35404d;
 $c46:#8CC4B6;
+$f0f:#F0F4FB;
 // colour
 $red:#ee4442;
-$blue:#006FCF;
+$blue:#3B7BE6;
+$blueHover: #4e88ea;
 $fblue: #20a0ff;
 $sblue:#2c4a67;
 $green:#46c100;
@@ -36,20 +38,14 @@ $qblue:#81dae8;
 
 // 颜色筛选列表
 $def:#FFFFFF;
-
-// 主题颜色
-$theme: #2d8cf0;
-
 // 左侧导航
-$lbg: #304156;//主背景
-$luc: $def;//未选中字体/图标
-$luch: $theme;//选中字体/图标
-$lc: #363e4f;//选中区域背景
-
+$lbg:#1F1079;//主背景
+$luc:#96ACD1;//未选中字体/图标
+$lc:#143368;//选中区域背景
 // 头部导航
 $tfc:#464C56;//字体颜色
 // 按钮背景色
-$btnblue:#3E69B3;//蓝色按钮
+$btnblue:#3B7BE6;//蓝色按钮
 $btngreen:#50CB44;//绿色按钮
 $btngray:#96a8ae;//灰色按钮
 $btnorange:#F2A560;//橙色按钮
@@ -67,12 +63,19 @@ $cc:#6F8FC6;//已审核图标烟色
 $opifc:#9FA9BA;//操作图标颜色
 $errorc:#E24053;//错误信息颜色
 $pagec:#A9A9A9;//分页字体颜色
-$headbg:#2f3843; //头部背景色
+$headbg:#E6EDF8; //头部背景色
 
 // 弹框
 $poptbg:#1F4079;//弹框头部背景色  与左侧导航主背景一样
 
 //主题色
-$color-primary: $fblue;
+$color-primary: $blue;
+//hover颜色
+// $hover: #b5d6ef;
+$hover: $f0f;
+//选中颜色
+$activity: #dadada;
+//select颜色
+$select: $blue;
 
 
